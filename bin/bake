@@ -1,0 +1,81 @@
+#!/usr/bin/env node
+
+
+var fs = require('fs');
+var exists = fs.existsSync;
+var parse = require('..');
+var exec = require('child_process').exec;
+
+var argv = process.argv.slice(2);
+
+// Init
+var env = process.env;
+env.path += ';./node_modules/.bin';
+
+if (!exists('Bakefile')) return fail('No Bakefile in the current folder');
+
+var file = fs.readFileSync('Bakefile', 'utf8');
+
+var result = parse(file);
+
+var targets = result.targets;
+var variables = result.variables;
+
+if (!argv[0]) argv[0] = 'all';
+
+// Run
+
+(function next(targetName) {
+  if (!targetName) return;
+
+  executeTarget(targetName, function(err) {
+    if (err) return fail(err);
+    next(argv.shift());
+  });
+})(argv.shift());
+
+
+// Functions
+
+function executeTarget(targetName, cb) {
+
+  if (!targets[targetName]) return cb(new Error('No target matching "' + targetName + '"'));
+
+  console.log('... Invoking %s target ...\n', targetName);
+
+  var target = targets[targetName];
+
+  executeRecipe(target, function(err) {
+    // if (err) return fail('\nTarget %s failed with output\n\n%s', targetName, err);
+    if (err) return cb(err);
+
+    console.log('done executing target %s', targetName);
+
+    cb();
+  });
+}
+
+function executeRecipe(target, cb) {
+
+  var lines = target.recipe.split(/\r?\n/);
+
+  // Execute each recipe line in sequence
+  (function next(line) {
+    if (!line) return cb();
+
+    exec(line, { env: env }, function(err, stdout, stderr) {
+      if (err) return cb(err);
+
+      if (stdout) console.log(stdout);
+      if (stderr) console.log(stderr);
+
+      next(lines.shift());
+    });
+
+  })(lines.shift());
+
+}
+
+function fail () {
+  console.error.apply(console, arguments);
+}
