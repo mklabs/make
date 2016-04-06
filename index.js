@@ -21,7 +21,6 @@ function parse(content) {
       var value = parts[2];
 
       variables[name] = value;
-
     },
 
     // Target declaration
@@ -29,13 +28,14 @@ function parse(content) {
       var reg = /([^:]+)\s?:\s?(.*)/;
       var parts = line.match(reg);
       var target = parts[1];
-      var prerequities = parts[2];
+      var prerequities = parts[2].split(/\s+/).filter(function(prereq) {
+        return prereq;
+      });
 
       last = targets[target] = {
-        prerequities: parts[2],
+        prerequities: prerequities,
         recipe: ''
       };
-
     },
 
     // Rule declaration (anything tabed by one indentation)
@@ -50,19 +50,17 @@ function parse(content) {
         return match;
       });
 
-      last.recipe += rule + '\n';
+      if (last.recipe) last.recipe += '\n' + rule;
+      else last.recipe += rule;
     }
   };
-
 
   lines.forEach(function(line) {
     if (!line) return;
 
     Object.keys(tokens).forEach(function(token) {
       var reg = new RegExp(token);
-
       if (reg.test(line)) tokens[token](line);
-
     });
 
   });
