@@ -1,5 +1,5 @@
 {
-  "name": "make.js",
+  "name": "bake",
   "version": "0.0.1",
   "description": "Task runner similar to make",
   "main": "index.js",
