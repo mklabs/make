@@ -1,13 +1,13 @@
 
-## Mack
+## Bake
 
-Mack is a little experiment to implement a simple task runner similar to
+Bake is a little experiment to implement a simple task runner similar to
 Make in JavaScript, while bringing in the conveniency of npm scripts by
 automatically adding `./node_modules/.bin` directory to the `$PATH`.
 
 It takes a similar approach to Make with a very close syntax. Of course,
-GNU Make is huge and Mack won't ever be on par with it, nor does it aim
-to do so. The parser used by Mack is under 100 sloc.
+GNU Make is huge and Bake won't ever be on par with it, nor does it aim
+to do so. The parser used by Bake is under 100 sloc.
 
 For now, basic variable and target declarations are supported, along
 with basic prerequities support (eg. task depending on other tasks).
