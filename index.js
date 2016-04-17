@@ -1,2 +1,2 @@
-var bake = module.exports = require('./lib/parser');
-bake.log = require('./lib/log');
+var bake = module.exports = require('./src/parser');
+bake.log = require('./src/log');

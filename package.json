@@ -6,8 +6,8 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "start": "babel-node bin/bake",
-    "test": "echo foo"
+    "babel": "babel lib/ -d src/",
+    "prepublish": "npm run babel"
   },
   "dependencies": {
     "chalk": "^1.1.3",
