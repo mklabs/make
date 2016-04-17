@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env babel-node
 var start = Date.now();
 
 const fs         = require('fs');
@@ -31,7 +31,7 @@ const debug = require('debug')('bake');
 
 // Init
 let env = process.env;
-env.PATH += path.resolve('./node_modules/.bin');
+env.PATH += (process.platform === 'win32' ? ';' : ':') + path.resolve('./node_modules/.bin');
 
 const bakefile = exists('Bakefile') ? 'Bakefile' :
   exists('Makefile') ? 'Makefile' : '';
@@ -123,7 +123,7 @@ function executePrereq(target, cb) {
 }
 
 function executeRules(target, cb) {
-  var recipe = target.recipe.trim();
+  var recipe = target.recipe;
   return new Promise((r, errback) => {
     var sh = spawn('bash', ['-c', recipe], {
       stdio: 'inherit',
@@ -171,5 +171,5 @@ function fail() {
 
 function end() {
   var time = Date.now() - start;
-  log.info(logsymbols.success + ' Build sucess in %sm', time);
+  log.info(logsymbols.success + ' Build sucess in %sms', time);
 }
