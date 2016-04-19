@@ -7,7 +7,8 @@
   "license": "ISC",
   "scripts": {
     "babel": "babel lib/ -d src/",
-    "prepublish": "npm run babel"
+    "prepublish": "npm run babel",
+    "watch": "watchd lib/* -c 'npm run babel'"
   },
   "dependencies": {
     "chalk": "^1.1.3",
