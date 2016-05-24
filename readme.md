@@ -2,6 +2,8 @@
 
 > Make like task runner, with npm script goodness
 
+    npm install bake-cli -g
+
 ## The Gist
 
 Given the following Makefile
