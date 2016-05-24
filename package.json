@@ -3,7 +3,8 @@
   "version": "0.0.4",
   "description": "Make like Task runner",
   "bin": {
-    "bake": "bin/bake.js"
+    "bake": "bin/bake.js",
+    "bake-init": "bin/bake-init.js"
   },
   "main": "index.js",
   "scripts": {
@@ -14,7 +15,8 @@
     "debug": "^2.2.0",
     "log-symbols": "^1.0.2",
     "minimist": "^1.2.0",
-    "npmlog": "^2.0.3"
+    "npmlog": "^2.0.3",
+    "which": "^1.2.9"
   },
   "devDependencies": {
     "babel-cli": "^6.7.5",
