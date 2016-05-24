@@ -2,15 +2,70 @@
 
 > Make like task runner, with npm script goodness
 
-## Description
+## The Gist
+
+Given the following Makefile
+
+```make
+foo2:
+	echo foo2
+
+foo: prefoo
+	echo foo
+
+prefoo:
+	echo prefoo
+
+foobar: prefoobar
+	echo foobar
+
+prefoobar:
+	echo blahblah
+
+all: foo foo2 foobar
+```
+
+Run bake
+
+    $ bake
+    bake info Invoking foo target
+    bake info Invoking prefoo target
+    prefoo
+    foo
+    bake info Invoking foo2 target
+    foo2
+    bake info Invoking foobar target
+    bake info Invoking prefoobar target
+    blahblah
+    foobar
+    bake info ✔ Build sucess in 41ms
+
+## Usage
+
+    $ bake <target> [options]
+
+    Options:
+      -h, --help         Show this help
+      -v, --version      Show package version
+      -d, --debug        Enable extended output
+
+    Targets:
+      foo2               Run target foo2
+      foo                Run target foo
+      prefoo             Run target prefoo
+      foobar             Run target foobar
+      prefoobar          Run target prefoobar
+
+## What is Bake ?
 
 Bake is a little experiment to implement a simple task runner similar to
 Make in JavaScript, while bringing in the conveniency of npm scripts with
 `$PATH` and environment variables.
 
-It takes a similar approach to Make with a very close syntax. Of course,
-GNU Make is huge and Bake won't ever be on par with it, nor does it aim
-to do so. The parser used by Bake is under 100 sloc.
+It takes a similar approach to Make with a very close syntax.
+
+Recipes (or rules, the commands defined for a target / task), are executed with
+`bash -c` (similar to npm scripts).
 
 For now, basic variable and target declarations are supported, along
 with basic prerequities support (eg. task depending on other tasks).
@@ -33,7 +88,7 @@ with basic prerequities support (eg. task depending on other tasks).
 - Implement [automatic variables](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables)
 - Implement mtime check (a target needs to be rebuilt if it does not exist of if it's older than any of the prerequities)
 
-### Makefiles goodness, without the suck
+### Makefiles goodness
 
 #### Bash scripting
 
@@ -107,8 +162,7 @@ deploy: build
 ### npm like environment
 
 Recipes run in an environment very similar to the environment npm scripts are
-run in, where many pieces of information are made available regarding the setup
-of bake.
+run in, namely the `PATH` environment variable.
 
 #### path
 
@@ -126,35 +180,3 @@ So, if your package.json has this:
 
 then you could run bake to execute a target that uses the `bar` script, which
 is exported into the `node_modules/.bin` directory on `npm install`.
-
-#### package.json vars
-
-The package.json fields are tacked onto the `npm_package_` prefix. So, for
-instance, if you had `{"name":"foo", "version":"1.2.5"}` in your package.json
-file, then your targets would have the `npm_package_name` environment
-variable set to "foo", and the `npm_package_version` set to "1.2.5"
-
-#### configuration
-
-The package.json "config" keys are overwritten in the environment if there is
-a config param of `<name>[@<version>]:<key>`. For example, if the package.json
-has this:
-
-```json
-{
-  "name" : "foo" ,
-  "config" : { "port" : "8080" }
-}
-```
-
-and the target is this:
-
-```make
-start:
-  node server.js
-```
-
-
-```js
-http.createServer(...).listen(process.env.npm_package_config_port);
-```
