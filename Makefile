@@ -22,7 +22,7 @@ babel:
 	babel lib/ -d src/
 
 watch:
-	watchd lib/* -c 'npm run babel'
+	watchd lib/* -c 'bake babel'
 
 release: version push publish
 
