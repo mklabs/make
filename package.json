@@ -1,8 +1,10 @@
 {
-  "name": "bake",
+  "name": "bake-cli",
   "version": "0.0.2",
   "description": "Make like Task runner",
-  "bin": "bin/bake.js",
+  "bin": {
+    "bake": "bin/bake.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "bake test"
