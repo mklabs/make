@@ -1,6 +1,6 @@
 {
   "name": "bake",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make like Task runner",
   "bin": "bin/bake.js",
   "main": "index.js",
