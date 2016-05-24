@@ -1,1 +1,0 @@
-const hey="Hello from hello";function oyo(){console.log(arguments,hey)}var fs=require("fs");var path=require("path");var child_process=require("child_process");
