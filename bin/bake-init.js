@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
-const { CLI } = require('..');
-var init = new CLI({
+const { Template } = require('..');
+
+var run = new Template({
   namespace: 'bake:init'
 });
 
-console.log(init);
+run.init();

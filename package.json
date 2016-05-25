@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "bake test"
+    "test": "mocha -R spec"
   },
   "dependencies": {
     "chalk": "^1.1.3",
