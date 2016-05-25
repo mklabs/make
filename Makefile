@@ -41,3 +41,6 @@ publish:
 test: babel
 	bake test-init
 	mocha -R spec
+
+docs:
+	mocha -R markdown >> readme.md
