@@ -25,9 +25,9 @@
       "start": "echo Starting generation of default template",
       "prestart": "echo prestart",
       "poststart": "echo poststart",
-      "install": "npm install --loglevel http --cache-min Infinity",
+      "install": "npm install --loglevel warn --cache-min Infinity",
       "preinstall": "echo Installing dependencies ...",
-      "postinstall": "npm ls --depth 1"
+      "postinstall": "npm ls --depth 0"
     }
   }
 }
