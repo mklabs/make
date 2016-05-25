@@ -20,7 +20,7 @@
     "watchd": "github:mklabs/watchd"
   },
   "bake": {
-    "description": "Generate a default ES6 setup: babel, eslint with standard config, mocha, bake, watchd and standard-version",
+    "description": "Scaffold a basic ES6 setup",
     "scripts": {
       "start": "echo Starting generation of default template",
       "prestart": "echo prestart",

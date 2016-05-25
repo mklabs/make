@@ -31,7 +31,7 @@
     "watchd": "github:mklabs/watchd"
   },
   "bake": {
-    "description": "Generate a default CLI setup",
+    "description": "Generate a basic CLI setup",
     "scripts": {
       "install": "npm install --loglevel http --cache-min Infinity",
       "preinstall": "echo Installing dependencies ...",

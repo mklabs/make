@@ -52,11 +52,18 @@ Run bake
       -d, --debug        Enable extended output
 
     Targets:
-      foo2               Run target foo2
+      all                Run target all
+      build              Run target build
       foo                Run target foo
       prefoo             Run target prefoo
       foobar             Run target foobar
       prefoobar          Run target prefoobar
+
+    $ bake init <template> [options]
+
+      default           Scaffold an ES6 setup     (babel, eslint, ...)
+      cli               Scaffold an ES6 CLI setup (minimist, ...)
+
 
 ## What is Bake ?
 
@@ -89,6 +96,63 @@ with basic prerequities support (eg. task depending on other tasks).
 - Implement [pattern rules](https://www.gnu.org/software/make/manual/html_node/Pattern-Intro.html#Pattern-Intro)
 - Implement [automatic variables](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html#Automatic-Variables)
 - Implement mtime check (a target needs to be rebuilt if it does not exist of if it's older than any of the prerequities)
+
+## bake init
+
+Basic scaffolding command
+
+Its purpose is to init a project Makefile with sensible defaults for various
+development needs.
+
+The default list of templates should be configurable. Adding new ones or
+overriding existing ones should be a simple process.
+
+Looking in
+
+- ~/.config/bake/templates
+- ~/.bake/templates
+
+Where the templates directories have the following structure:
+
+  templates/
+    ├── es6
+    │   ├── .babelrc
+    │   ├── .eslintrc
+    │   ├── Makefile
+    │   ├── package.json
+    │   └── .travis.yml
+    └── frontend
+        ├── Makefile
+        ├── package.json
+        └── webpack.config.js
+
+
+The subdirectory name is the template name (invoked with bake init <name>).
+
+If no name is defined, it defaults to "default"
+
+Files
+
+- Makefile     - Is the template Makefile to use
+- package.json - JSON file to merge with project's package.json (usually to include devDependencies)
+- *            - Every other top level files is copied to destination
+
+Every JSON files generated is merged with existing files. `.eslintrc` and
+`.babelrc` are handled as JSON files.
+
+Other existing files are skipped.
+
+The package.json file can have a "bake" field (removed when merged with
+package.json), with the following properties:
+
+- "scripts"          - Similar to npm scripts, a list of hooks for bake to invoke
+- "scripts.start"    - Executed when the generation process starts
+- "scripts.install"  - Executed when the template has been generated
+
+These hooks can be used to further customize the template generation (like
+running `npm install` in "scripts.install")
+
+See [the default template](./templates/default) for more information.
 
 ### Makefiles goodness
 
