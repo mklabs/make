@@ -36,4 +36,4 @@ publish:
 	npm publish
 
 test: babel
-	bake
+	mocha -R spec

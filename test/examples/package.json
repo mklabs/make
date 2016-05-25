@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "qs": "^6.2.0"
+  "scripts": {
+    "test": "mocha -R spec"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
@@ -18,12 +18,5 @@
     "mocha": "^2.5.2",
     "standard-version": "^2.2.1",
     "watchd": "github:mklabs/watchd"
-  },
-  "scripts": {
-    "test": "mocha -R spec"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "es6": "es6"
+  }
 }
