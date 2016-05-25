@@ -17,12 +17,15 @@ foobar: prefoobar
 prefoobar:
 	echo blahblah
 
+test-init:
+	cd test/examples && bake init --skip
+
 # Useful stuff
 babel:
 	babel lib/ -d src/
 
 watch:
-	watchd lib/* -c 'bake babel'
+	watchd lib/* test/* package.json -c 'bake test'
 
 release: version push publish
 
@@ -36,4 +39,5 @@ publish:
 	npm publish
 
 test: babel
+	bake test-init
 	mocha -R spec
