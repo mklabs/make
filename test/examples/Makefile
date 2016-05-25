@@ -1,2 +1,3 @@
 
 # Default Makefile
+  echo foo

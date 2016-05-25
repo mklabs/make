@@ -5,4 +5,4 @@ bake.parser = require('./src/parser');
 
 bake.CLI = require('./src/cli');
 bake.Bake = require('./src/bake');
-bake.Init = require('./src/init');
+bake.Template = require('./src/template');
