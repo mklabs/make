@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/mklabs/bake/compare/v0.1.0...v0.1.1) (2016-05-26)
+
+
+### Bug Fixes
+
+* make sure local node_modules/.bin path is in front of $PATH ([2d903a3](https://github.com/mklabs/bake/commit/2d903a3))
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/mklabs/bake/compare/v0.0.4...v0.1.0) (2016-05-25)
 
