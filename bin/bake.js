@@ -17,7 +17,7 @@ const assign = Object.assign || require('object-assign');
 const separator = process.platform === 'win32' ? ';' : ':';
 
 let env = assign({}, process.env, {
-  PATH: process.env.PATH + separator + path.resolve('./node_modules/.bin')
+  PATH: path.resolve('./node_modules/.bin') + separator + process.env.PATH
 });
 
 const bakefile = exists('Bakefile') ? 'Bakefile' :
