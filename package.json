@@ -4,6 +4,7 @@
   "description": "Make like Task runner",
   "main": "index.js",
   "scripts": {
+    "prepublish": "bake babel",
     "test": "pwd && babel lib -d src && mocha -R spec"
   },
   "devDependencies": {
