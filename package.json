@@ -4,8 +4,7 @@
   "description": "Make like Task runner",
   "main": "index.js",
   "scripts": {
-    "prepublish": "bake babel",
-    "test": "pwd && babel lib -d src && mocha -R spec"
+    "test": "babel lib -d src && mocha -R spec"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
@@ -33,6 +32,9 @@
     "log-symbols": "^1.0.2",
     "minimist": "^1.2.0",
     "npmlog": "^2.0.3",
+    "request": "^2.72.0",
+    "template-copy": "^1.1.1",
+    "unzip": "^0.1.11",
     "which": "^1.2.9"
   },
   "repository": {
