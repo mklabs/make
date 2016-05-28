@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/mklabs/bake/compare/v0.1.6...v0.2.0) (2016-05-28)
+
+
+### Bug Fixes
+
+* json error eslintrc ([fc26af7](https://github.com/mklabs/bake/commit/fc26af7))
+* tests ([19298e2](https://github.com/mklabs/bake/commit/19298e2))
+
+
+### Features
+
+* add ability to install templates from github repos ([0fe0fef](https://github.com/mklabs/bake/commit/0fe0fef))
+* add eslint template ([538953f](https://github.com/mklabs/bake/commit/538953f))
+* ava template ([483f8d7](https://github.com/mklabs/bake/commit/483f8d7))
+* mocha template ([3a91b1d](https://github.com/mklabs/bake/commit/3a91b1d))
+* simple template ([fc551dc](https://github.com/mklabs/bake/commit/fc551dc))
+
+
+
 <a name="0.1.6"></a>
 ## [0.1.6](https://github.com/mklabs/bake/compare/v0.1.5...v0.1.6) (2016-05-26)
 
