@@ -5,5 +5,20 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "extends": "standard"
+  "extends": "standard",
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-multi-spaces": [
+      "error",
+      {
+        "exceptions": {
+          "VariableDeclarator": true
+        }
+      }
+    ],
+    "promise/param-names": 0
+  }
 }
