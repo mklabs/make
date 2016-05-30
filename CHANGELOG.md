@@ -2,6 +2,70 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/mklabs/bake/compare/v0.2.0...v0.6.0) (2016-05-30)
+
+
+### Bug Fixes
+
+* dirty hack to avoid fs warn on graceful-fs, from request ([b9d7fe0](https://github.com/mklabs/bake/commit/b9d7fe0))
+
+
+### Features
+
+* livereactload template ([97294d8](https://github.com/mklabs/bake/commit/97294d8))
+* Windows support - Use env.Path and cmd /d /s /c ([688b3de](https://github.com/mklabs/bake/commit/688b3de))
+
+
+
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/mklabs/bake/compare/v0.2.0...v0.5.0) (2016-05-30)
+
+
+### Bug Fixes
+
+* dirty hack to avoid fs warn on graceful-fs, from request ([b9d7fe0](https://github.com/mklabs/bake/commit/b9d7fe0))
+
+
+### Features
+
+* livereactload template ([97294d8](https://github.com/mklabs/bake/commit/97294d8))
+* Windows support - Use env.Path and cmd /d /s /c ([688b3de](https://github.com/mklabs/bake/commit/688b3de))
+
+
+
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/mklabs/bake/compare/v0.2.0...v0.4.0) (2016-05-30)
+
+
+### Bug Fixes
+
+* dirty hack to avoid fs warn on graceful-fs, from request ([b9d7fe0](https://github.com/mklabs/bake/commit/b9d7fe0))
+
+
+### Features
+
+* livereactload template ([97294d8](https://github.com/mklabs/bake/commit/97294d8))
+* Windows support - Use env.Path and cmd /d /s /c ([688b3de](https://github.com/mklabs/bake/commit/688b3de))
+
+
+
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/mklabs/bake/compare/v0.2.0...v0.3.0) (2016-05-30)
+
+
+### Bug Fixes
+
+* dirty hack to avoid fs warn on graceful-fs, from request ([b9d7fe0](https://github.com/mklabs/bake/commit/b9d7fe0))
+
+
+### Features
+
+* livereactload template ([97294d8](https://github.com/mklabs/bake/commit/97294d8))
+* Windows support - Use env.Path and cmd /d /s /c ([688b3de](https://github.com/mklabs/bake/commit/688b3de))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/mklabs/bake/compare/v0.1.6...v0.2.0) (2016-05-28)
 

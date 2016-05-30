@@ -1,22 +1,6 @@
-all: foo foo2 foobar
+all: test
 
 # Tests
-
-foo2:
-	echo foo2
-
-foo: prefoo prefoobar
-	echo foo
-
-prefoo:
-	echo prefoo
-
-foobar: prefoobar
-	echo foobar
-
-prefoobar:
-	echo blahblah
-
 test-init:
 	cd test/examples && bake init --skip
 
@@ -30,7 +14,7 @@ watch:
 release: version push publish
 
 version:
-	standard-version -m '%s'
+	standard-version
 
 push:
 	git push origin master --tags
