@@ -1,4 +1,11 @@
-all: test
+foo: prefoo
+	echo foo
+
+prefoo: preprefoo
+	echo blahblah
+
+preprefoo:
+	echo prefoo
 
 # Tests
 test-init:
@@ -14,7 +21,7 @@ watch:
 release: version push publish
 
 version:
-	standard-version
+	standard-version -m '%s'
 
 push:
 	git push origin master --tags
@@ -28,3 +35,21 @@ test: babel
 
 docs:
 	mocha -R markdown >> readme.md
+
+# tests
+foo: prefoo prefoobar
+	echo foo
+
+foo2:
+	echo foo2
+
+prefoo:
+	echo prefoo
+
+foobar: prefoobar
+	echo foobar
+
+prefoobar:
+	echo blahblah
+
+all: foo foo2 foobar
