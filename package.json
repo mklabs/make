@@ -4,7 +4,8 @@
   "description": "Make like Task runner",
   "main": "index.js",
   "scripts": {
-    "test": "babel lib -d src && mocha -R spec"
+    "test": "babel lib -d src && mocha -R spec",
+    "babel": "babel lib -d src"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",

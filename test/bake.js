@@ -1,6 +1,8 @@
 const cli = require('gentle-cli');
 const { join } = require('path');
 
+const NL = process.platform === 'win32' ? '\r\n' : '\n';
+
 describe('Bake cli', () => {
   let bake = (cmd) => {
     return cli()
@@ -17,14 +19,14 @@ describe('Bake cli', () => {
 
   it('bake foo', (done) => {
     bake('foo')
-      .expect('prefoo\nblahblah\nfoo')
+      .expect(['prefoo', 'blahblah', 'foo'].join(NL))
       .expect(0)
       .end(done);
   });
 
   it('bake all', (done) => {
     bake('all')
-      .expect('prefoo\nblahblah\nfoo\nfoo2\nblahblah\nfoobar')
+      .expect(['prefoo', 'blahblah', 'foo', 'foo2', 'blahblah', 'foobar'].join(NL))
       .expect(0)
       .end(done);
   });

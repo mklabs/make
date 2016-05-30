@@ -4,6 +4,33 @@
 
     npm install bake-cli -g
 
+- Windows support \o/
+- Borrows heavily from npm in how recipes are executed
+- Recipes are executed with `bash -c` instead of executing each rule, line by line like Make does.
+- No need to prefix rules with $@ for silent output
+- Slightly easier variables substitution (eg. $VARIABLE instead of $(VARIABLE)
+- Variable declarations
+- No tab requirements
+- Path manipulation to prepend `./node_modules/.bin`, like npm does for npm scripts.
+
+## What is Bake ?
+
+Bake is a little experiment to implement a simple task runner similar to
+Make in JavaScript, while bringing in the convenience of npm scripts with
+`$PATH` and environment variables.
+
+It takes a similar approach to Make with a very close syntax.
+
+Recipes (or rules, the commands defined for a target / task), are executed with
+`sh -c` for unix, `cmd.exe /d /s /c` for windows platform.
+
+For now, basic variable and target declarations are supported, along
+with basic prerequisite support (eg. task depending on other tasks).
+
+The parser bake use is small and have its flaws, but for most Makefiles, bake is
+able to parse them correctly. It makes it possible and really easy to use Make on
+Windows (tested on Windows 10).
+
 ## The Gist
 
 Given the following Makefile
@@ -63,31 +90,6 @@ Run bake
 
       default           Scaffold an ES6 setup     (babel, eslint, ...)
       cli               Scaffold an ES6 CLI setup (minimist, ...)
-
-
-## What is Bake ?
-
-Bake is a little experiment to implement a simple task runner similar to
-Make in JavaScript, while bringing in the conveniency of npm scripts with
-`$PATH` and environment variables.
-
-It takes a similar approach to Make with a very close syntax.
-
-Recipes (or rules, the commands defined for a target / task), are executed with
-`bash -c` (similar to npm scripts).
-
-For now, basic variable and target declarations are supported, along
-with basic prerequities support (eg. task depending on other tasks).
-
-- No need to prefix rules with $@ for silent output
-- Slightly easier variables substitution (eg. $VARIABLE instead of $(VARIABLE)
-- Variable declarations
-- No tab requirements
-- Every binaries in `./node_modules/.bin` is made available, like npm does for npm scripts.
-- Real bash scripting (variables / multiline)
-  - Recipes are executed with `bash -c` instead of executing each rule, line by line like Make does.
-  - Multiline echo support
-  - Bash variable support
 
 **todo**
 

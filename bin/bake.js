@@ -15,10 +15,10 @@ const { fail } = CLI;
 
 const assign = Object.assign || require('object-assign');
 const separator = process.platform === 'win32' ? ';' : ':';
+const PATH = process.platform === 'win32' ? 'Path' : ':';
 
-let env = assign({}, process.env, {
-  PATH: path.resolve('./node_modules/.bin') + separator + process.env.PATH
-});
+let env = assign({}, process.env);
+env[PATH] = path.resolve('./node_modules/.bin') + separator + process.env.PATH;
 
 const bakefile = exists('Bakefile') ? 'Bakefile' :
   exists('Makefile') ? 'Makefile' :
