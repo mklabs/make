@@ -5,13 +5,15 @@
     npm install bake-cli -g
 
 - Windows support \o/
+- Parses Makefile and execute targets
 - Borrows heavily from npm in how recipes are executed
 - Recipes are executed with `bash -c` instead of executing each rule, line by line like Make does.
+- Supprots prerequisite (eg. task depending on other tasks)
+- Path manipulation to prepend `./node_modules/.bin` making npm installed commands available in Makefiles.
 - No need to prefix rules with $@ for silent output
 - Slightly easier variables substitution (eg. $VARIABLE instead of $(VARIABLE)
 - Variable declarations
 - No tab requirements
-- Path manipulation to prepend `./node_modules/.bin`, like npm does for npm scripts.
 
 ## What is Bake ?
 
