@@ -1,4 +1,4 @@
-# bake [![Build Status](https://secure.travis-ci.org/mklabs/bake.png)](http://travis-ci.org/mklabs/bake)
+# make
 
 > Make like task runner
 
@@ -14,6 +14,8 @@
 - Slightly easier variables substitution (eg. $VARIABLE instead of $(VARIABLE)
 - Variable declarations
 - No tab requirements
+
+Note: This repository is in the process of being renamed into make instead of the former "bake" name.
 
 ## What is Bake ?
 
