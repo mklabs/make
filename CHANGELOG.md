@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/mklabs/make/compare/0.6.0...v0.8.0) (2016-08-10)
+
+
+### Features
+
+* bump to 0.8.0, rename into make ([8dff878](https://github.com/mklabs/make/commit/8dff878))
+
+
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://github.com/mklabs/make/compare/0.6.0...v0.6.1) (2016-08-10)
 
