@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.1"></a>
+## [0.6.1](https://github.com/mklabs/make/compare/0.6.0...v0.6.1) (2016-08-10)
+
+* rename - Update all refs to bake or Bake into make or Make
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/mklabs/bake/compare/v0.2.0...v0.6.0) (2016-05-30)
 

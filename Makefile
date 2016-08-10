@@ -21,7 +21,7 @@ watch:
 release: version push publish
 
 version:
-	standard-version -m '%s'
+	standard-version
 
 push:
 	git push origin master --tags

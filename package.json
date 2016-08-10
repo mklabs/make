@@ -1,6 +1,6 @@
 {
   "name": "make",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Make like Task runner",
   "main": "index.js",
   "scripts": {
