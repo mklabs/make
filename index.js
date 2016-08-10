@@ -1,8 +1,8 @@
-var bake = module.exports;
+var make = module.exports;
 
-bake.log = require('./src/log');
-bake.parser = require('./src/parser');
+make.log = require('./src/log');
+make.parser = require('./src/parser');
 
-bake.CLI = require('./src/cli');
-bake.Bake = require('./src/bake');
-bake.Template = require('./src/template');
+make.CLI = require('./src/cli');
+make.Make = require('./src/make');
+make.Template = require('./src/template');
