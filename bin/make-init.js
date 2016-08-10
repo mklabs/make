@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const { Template } = require('..');
 
 var run = new Template({
