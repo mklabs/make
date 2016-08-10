@@ -3,7 +3,7 @@
 const { Template } = require('..');
 
 var run = new Template({
-  namespace: 'bake:init'
+  namespace: 'make:init'
 });
 
 run.init();

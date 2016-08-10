@@ -7,16 +7,12 @@ const assert = require('assert');
 describe('bake init', () => {
 
   let bake = (cmd) => {
-    // return cli({ cwd: join(__dirname, 'output') })
     return cli({ cwd: join(__dirname, 'examples') })
-      .use('node ' + join(__dirname, '../bin/bake.js') + ' ' + cmd);
+      .use('node ' + join(__dirname, '../bin/make.js') + ' ' + cmd);
   };
 
   it('bake init', (done) => {
-    bake('init --skip')
-      // .expect('Running default template')
-      // .expect(/Makefile\s+already exists, skipping/)
-      // .expect(/Build success in \d+ms/)
+    bake('init')
       .expect(2, () => {
         let files = dir(join(__dirname, 'examples'));
         assert.equal(files.length, 8);
